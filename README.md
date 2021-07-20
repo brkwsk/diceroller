@@ -1,2 +1,2 @@
 # diceroller
- An app for rolling dice
+ A Django app for rolling dice
