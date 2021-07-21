@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from datetime import timezone
 from os import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -109,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = str(timezone())
+TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
 
