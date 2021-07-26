@@ -3,7 +3,9 @@
         <title>Diceroller</title>
     </head>
     <body>
-        <header>Rolled results</header>
-        <div></div>
+        <h1>Rolled results</h1>
+            <p>You rolled {{ results.result }}.</p>
+            
+            <a href="{% url 'diceroller:initial' %}">Roll again?</a>
     </body>
 </html>

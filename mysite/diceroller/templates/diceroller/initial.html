@@ -1,9 +1,30 @@
-<html>
+<form action ="{% url 'diceroller:roll' %}" method = "post">
+{% csrf_token %}
     <head>
         <title>Diceroller</title>
     </head>
+
     <body>
-        <header>Roll setup</header>
-        <div></div>
+        <h1>Roll setup</h1>
+
+            <p><input type = "number" name = "number_of_dice" id = "number_of_dice" value = "{{ choice.number_of_dice }}">
+            <label>Number of dice</label></p>
+            <p>
+            <input list = "walls" id = "number_of_dice_walls" name = "number_of_dice_walls" value = "{{ choice.dice_walls }}"/>
+            <datalist id = "walls">
+                <option value = 2>
+                <option value = 3>
+                <option value = 4>
+                <option value = 6>
+                <option value = 8>
+                <option value = 10>
+                <option value = 12>
+                <option value = 20>
+                <option value = 100>
+            </datalist>
+            <label>Dice walls</label></p>
+            
+        <input type="submit" value="Roll">
+
     </body>
-</html>
+</form>
