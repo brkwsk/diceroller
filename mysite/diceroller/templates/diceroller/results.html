@@ -4,8 +4,11 @@
     </head>
     <body>
         <h1>Rolled results</h1>
-            <p>You rolled {{ results.result }}.</p>
-            
+            <p>You rolled {{ choice.results_set.get.result }} on {{ choice.number_of_dice }}d{{ choice.dice_walls }}.</p>
+            <p>Rolled numbers:</p>
+            {% for number in choice.results_set.get.rollednumber_set.all %}
+                <p> {{ number.value }} </p>
+            {% endfor %}
             <a href="{% url 'diceroller:initial' %}">Roll again?</a>
     </body>
 </html>

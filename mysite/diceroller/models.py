@@ -36,6 +36,10 @@ class Results(models.Model):
     rolled_numbers = []
     def __str__(self):
         return str(self.result)
+    
+class RolledNumber(models.Model):
+    value = models.IntegerField()
+    result = models.ForeignKey(Results, on_delete=models.CASCADE)
 
 """class RolledNumber(models.Model):
     results = models.ForeignKey(Results, on_delete = models.CASCADE)

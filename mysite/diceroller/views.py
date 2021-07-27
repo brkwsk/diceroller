@@ -14,7 +14,7 @@ class InitialView(generic.ListView):
         return Choice.objects.all()
     
 class ResultsView(generic.DetailView):
-    model = Results 
+    model = Choice
     template_name = 'diceroller/results.html'
     
     
@@ -27,14 +27,20 @@ def results(request):
 #    model = Roll
     return render(request, 'diceroller/results.html',{'roll':roll})"""
     
+def home(request):
+    return HttpResponseRedirect(reverse('diceroller:initial'))
+
 def roll(request):
     if Choice.objects.all().exists():
         choice_id=Choice.objects.latest('id').id + 1
     else:
         choice_id = 1
     choice = Choice(pk=choice_id)
+    choice.dice_walls = int(request.POST['dice_walls'])
+    choice.number_of_dice = int(request.POST['number_of_dice'])
     choice.save()
     result = choice.results_set.create(result=0)
+    result.rolled_numbers = []
     print(choice.number_of_dice)
     print(choice.dice_walls)
     #rolled_number_pk=1
@@ -43,6 +49,7 @@ def roll(request):
         result.result += number
         #result.RolledNumber(pk=rolled_number_pk).post(number)
         result.rolled_numbers.append(number)
+        result.rollednumber_set.create(value=number)
         result.save()
     return HttpResponseRedirect(reverse('diceroller:results', args = (choice.id,)))
     
