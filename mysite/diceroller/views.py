@@ -31,7 +31,8 @@ def roll(request):
     choice.dice_walls = int(request.POST['dice_walls'])
     choice.number_of_dice = int(request.POST['number_of_dice'])
     
-    if choice.dice_walls <2:
+    #if choice.dice_walls <2:
+    if choice.dice_walls not in choice.dice_wall_numbers:
         choice.delete()
         return render(request, 'diceroller/initial.html', {"error_message":"Choose one of the available dice types."})
     if choice.number_of_dice < 1:

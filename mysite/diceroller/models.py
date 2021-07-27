@@ -10,6 +10,7 @@ class Choice(models.Model):
         (10,'10'),(12,'12'),
         (20,'20'),(100,'100'),
         )
+    dice_wall_numbers=[2,3,4,6,8,10,12,20,100]
     number_of_dice = models.IntegerField(default=1)
     number_of_dice.max_value = 100
     dice_walls = models.IntegerField(choices=POSSIBLE_DICE_WALL_NUMBERS, default=6)
