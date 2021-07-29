@@ -21,12 +21,7 @@ def home(request):
     return HttpResponseRedirect(reverse('diceroller:initial'))
 
 def roll(request):
-    if Choice.objects.all().exists():
-        choice_id=Choice.objects.latest('id').id + 1
-    else:
-        choice_id = 1
-        
-    choice = Choice(pk=choice_id)
+    choice = Choice()
     choice.dice_walls = int(request.POST['dice_walls'])
     choice.number_of_dice = int(request.POST['number_of_dice'])
     
