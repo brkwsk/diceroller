@@ -1,14 +1,21 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Diceroller</title>
     </head>
     <body>
-        <h1>Rolled results</h1>
+        <header>
+            <h1>Rolled results</h1>
+        </header>
+        <main>
             <p>You rolled {{ choice.results_set.get.result }} on {{ choice.number_of_dice }}d{{ choice.dice_walls }}.</p>
             <p>Rolled numbers:</p>
             {% for number in choice.results_set.get.rollednumber_set.all %}
                 <p> {{ number.value }} </p>
             {% endfor %}
-            <a href="{% url 'diceroller:initial' %}">Roll again?</a>
+        </main>
+        <nav>
+            <a href="{% url 'diceroller:initial' %}">Roll again</a>
+        </nav>
     </body>
 </html>
