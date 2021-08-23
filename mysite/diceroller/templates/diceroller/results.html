@@ -13,6 +13,10 @@
             {% for number in choice.results_set.get.rollednumber_set.all %}
                 <p> {{ number.value }} </p>
             {% endfor %}
+            {% load static %}
+            <audio autoplay>
+                <source src="{% static 'diceroller/audio/dice_rolling_sound.mp3' %}" type="audio/mp3">
+            </audio>
         </main>
         <nav>
             <a href="{% url 'diceroller:initial' %}">Roll again</a>
