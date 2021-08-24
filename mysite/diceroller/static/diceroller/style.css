@@ -1,0 +1,47 @@
+{% load static %}
+*{
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; 
+    text-align: center;
+    /*background-color: peru;*/
+}
+body{
+    background-image: url('images/Parchment.jpg');
+    max-width:250px;
+    min-width:100px;
+    height:250px;
+    border: 2px solid black;
+    padding-bottom:20px;
+    border-radius:10px;
+}
+main{
+    padding-left:0px;
+}
+h1, a{
+    color:darkcyan;
+    font-weight: bold;
+}
+h1{
+    font-size:25px;
+}
+a{
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+a:hover{
+    color:darkred;
+}
+p{
+    color:black;
+    font-size: 18px;
+}
+select,input{
+    font-size: 18px;
+    background-color: antiquewhite;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.rolled_number{
+    font-size: 12px;
+}
