@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<form action ="{% url 'diceroller:roll' %}" method = "post">
+<html>
+{% load static %}
+<form action ="{% url 'diceroller:roll' %}" method = "POST">
 {% csrf_token %}
+
     <head>
         <title>Diceroller</title>
+        <link href="{% static 'diceroller/style.css'%}" rel="stylesheet">
     </head>
 
     <body>
@@ -37,3 +41,4 @@
         </main>
     </body>
 </form>
+</html>

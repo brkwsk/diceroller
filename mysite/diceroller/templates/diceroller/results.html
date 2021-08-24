@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
+    {% load static %}
     <head>
         <title>Diceroller</title>
+        <link href="{% static 'diceroller/style.css' %}" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Rolled results</h1>
         </header>
         <main>
-            <p>You rolled {{ choice.results_set.get.result }} on {{ choice.number_of_dice }}d{{ choice.dice_walls }}.</p>
+            <p>You rolled <strong>{{ choice.results_set.get.result }}</strong> on <strong>{{ choice.number_of_dice }}d{{ choice.dice_walls }}</strong>.</p>
             <p>Rolled numbers:</p>
             {% for number in choice.results_set.get.rollednumber_set.all %}
-                <p> {{ number.value }} </p>
+                <p class='rolled_number'> {{ number.value }} </p>
             {% endfor %}
-            {% load static %}
             <audio autoplay>
                 <source src="{% static 'diceroller/audio/dice_rolling_sound.mp3' %}" type="audio/mp3">
             </audio>
