@@ -1,14 +1,13 @@
 {% load static %}
 *{
-    font-family: Copperplate,Copperplate Gothic Light,fantasy; 
+    font-family: Copperplate,'Copperplate Gothic Light',fantasy; 
     text-align: center;
-    /*background-color: peru;*/
 }
 body{
     background-image: url('images/Parchment.jpg');
     max-width:250px;
     min-width:100px;
-    height:250px;
+    min-height:250px;
     border: 2px solid black;
     padding-bottom:20px;
     border-radius:10px;
@@ -35,6 +34,7 @@ a:hover{
 p{
     color:black;
     font-size: 18px;
+    font-weight: 500;
 }
 select,input{
     font-size: 18px;
@@ -43,5 +43,5 @@ select,input{
     border-radius: 10px;
 }
 .rolled_number{
-    font-size: 12px;
+    display: inline;
 }
