@@ -15,6 +15,7 @@
             {% for number in choice.results_set.get.rollednumber_set.all %}
                 <p class='rolled_number'> {{ number.value }} </p>
             {% endfor %}
+            <p></p>
             <audio autoplay>
                 <source src="{% static 'diceroller/audio/dice_rolling_sound.mp3' %}" type="audio/mp3">
             </audio>
